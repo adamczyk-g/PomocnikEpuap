@@ -6,6 +6,6 @@ namespace PomocnikEpuap.Core
 {
     public class XmlFieldMap
     {
-
+         
     }
 }
