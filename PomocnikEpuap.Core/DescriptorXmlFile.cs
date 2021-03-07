@@ -4,10 +4,9 @@ using System.Text;
 
 namespace PomocnikEpuap.Core
 {
-    public class XmlFieldMap
+    public class DescriptorXmlFile
     {
-         public XmlFieldMap() { }
+        public DescriptorXmlFile() { }
 
-        
     }
 }
