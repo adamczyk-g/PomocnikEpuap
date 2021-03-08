@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 using System.IO;
+using System.Linq;
 
 namespace PomocnikEpuap.Core
 {
@@ -38,10 +39,36 @@ namespace PomocnikEpuap.Core
             return new EpuapXmlFile(fileName, xmlDocument);
         }
         public string FileName { get; private set; }
-        public string GetField (string data){
+        public string GetFirstField (string data){
+
+            //XmlNameTable table = xmlDocument.names;
 
             XmlNodeList elemList = xmlDocument.GetElementsByTagName(data);
             return elemList[0].InnerXml;
         }
+        public IEnumerable<string> GetAllFields(string data)
+        {
+            ReadNamespaces();
+            XmlElement xmlElem = xmlDocument.DocumentElement;
+            //var node = xmlElem.SelectSingleNode(data, ReadNamespaces());
+            XmlNodeList list = xmlElem.SelectNodes(data, ReadNamespaces());
+            IEnumerable<string> query =  list.Cast<XmlNode>().Select(x=>x.InnerText);
+
+            //return node.InnerText;
+            return query;
+        }
+
+        public XmlNamespaceManager ReadNamespaces() {
+
+            XmlNodeList _xmlNameSpaceList = xmlDocument.SelectNodes(@"//namespace::*[not(. = ../../namespace::*)]");
+            XmlNamespaceManager _xmlNSmgr = new XmlNamespaceManager(xmlDocument.NameTable);
+            foreach (XmlNode nsNode in _xmlNameSpaceList)
+            {
+                _xmlNSmgr.AddNamespace(nsNode.LocalName, nsNode.Value);
+            }
+
+            return _xmlNSmgr;
+        }
+
     }
 }

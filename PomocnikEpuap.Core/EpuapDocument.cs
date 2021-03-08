@@ -27,5 +27,8 @@ namespace PomocnikEpuap.Core
         public string Content { get; }
         public List<Attachment> Attachements {get;}
 
+        //Adresaci
+        //DW
+
     }
 }
