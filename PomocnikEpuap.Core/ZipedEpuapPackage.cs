@@ -23,26 +23,23 @@ namespace PomocnikEpuap.Core
 
             ZipArchive zipArchive = ZipFile.Open(packageFilePath, ZipArchiveMode.Read, System.Text.Encoding.GetEncoding(852));
 
-            XmlDocument descriptor, document;
+            EpuapXmlFile descriptor = null, document = null;
 
-            if (zipArchive.Entries.Count != 2) { /*nie obsługiwana ilość plików w paczce*/}
-
-            List<XmlDocument> plikiXml = new List<XmlDocument>();
+            List<EpuapXmlFile> plikiXml = new List<EpuapXmlFile>();
 
             foreach (ZipArchiveEntry zipEntry in zipArchive.Entries)
             {
-                XmlFileNames.Add(zipEntry.Name);
+                XmlFileNames.Add(zipEntry.Name);             
 
-                XmlDocument xmlFile = new XmlDocument();
-                xmlFile.Load(zipEntry.Open());
+                EpuapXmlFile epuapXmlFile = EpuapXmlFile.Create(zipEntry.Name, zipEntry.Open());
 
-                plikiXml.Add(xmlFile);
+                if (zipEntry.Name == "Deskryptor.xml") 
+                    descriptor = epuapXmlFile;
+                else 
+                    document = epuapXmlFile;
             }
 
             FilesCount = zipArchive.Entries.Count;
-            //EpuapXmlFile with name
-            //jeśli nie ma pliku deskryptor ....paczka uszkodzona
-            //
 
             return new EpuapPackage(descriptor, document);
         }
@@ -50,8 +47,6 @@ namespace PomocnikEpuap.Core
         public int FilesCount { get; private set; }
 
         public List<string> XmlFileNames { get; private set; }
-
-        //public List<XmlDocument> XmlFiles { get; private set; }
 
     }
 }
