@@ -57,7 +57,6 @@ namespace PomocnikEpuap.Core
             //return node.InnerText;
             return query;
         }
-
         public XmlNamespaceManager ReadNamespaces() {
 
             XmlNodeList _xmlNameSpaceList = xmlDocument.SelectNodes(@"//namespace::*[not(. = ../../namespace::*)]");
