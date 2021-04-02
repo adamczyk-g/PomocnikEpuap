@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomocnikEpuap.Core", "PomocnikEpuap.Core\PomocnikEpuap.Core.csproj", "{2B2EAB98-00B7-4B5B-82A3-E241DD582192}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomocnikEpuap.Core.Tests", "PomocnikEpuap.Core.Tests\PomocnikEpuap.Core.Tests.csproj", "{57021275-E68E-4627-B625-6818EFF22119}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomocnikEpuap.WinForms", "PomocnikEpuap.WinForms\PomocnikEpuap.WinForms.csproj", "{4891C518-AB0F-4A93-8B5D-55E6D976FA47}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{2B2EAB98-00B7-4B5B-82A3-E241DD582192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B2EAB98-00B7-4B5B-82A3-E241DD582192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B2EAB98-00B7-4B5B-82A3-E241DD582192}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57021275-E68E-4627-B625-6818EFF22119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57021275-E68E-4627-B625-6818EFF22119}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57021275-E68E-4627-B625-6818EFF22119}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57021275-E68E-4627-B625-6818EFF22119}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4891C518-AB0F-4A93-8B5D-55E6D976FA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4891C518-AB0F-4A93-8B5D-55E6D976FA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4891C518-AB0F-4A93-8B5D-55E6D976FA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4891C518-AB0F-4A93-8B5D-55E6D976FA47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
