@@ -33,7 +33,7 @@ namespace PomocnikEpuap.Core
 
                 EpuapXmlFile epuapXmlFile = EpuapXmlFile.Create(zipEntry.Name, zipEntry.Open());
 
-                if (zipEntry.Name == "Deskryptor.xml") 
+                if (zipEntry.Name == "Deskryptor.xml")
                     descriptor = epuapXmlFile;
                 else 
                     document = epuapXmlFile;

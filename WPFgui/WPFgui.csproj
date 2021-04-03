@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\about.gif" />
+    <None Remove="Resources\folder.gif" />
+    <None Remove="Resources\help.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PomocnikEpuap.Core\PomocnikEpuap.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\about.gif" />
+    <Resource Include="Resources\folder.gif" />
+    <Resource Include="Resources\help.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
 </Project>

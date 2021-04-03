@@ -21,5 +21,19 @@ namespace WPFgui.View
         {
             InitializeComponent();
         }
+
+        private void OpenButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Open button is clicked.");
+        }
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Help button is clicked.");
+        }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("About button is clicked.");
+        }
     }
 }

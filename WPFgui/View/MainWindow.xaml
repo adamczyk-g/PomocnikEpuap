@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:WPFgui.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-        
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button ToolTip="Open ..." Name="OpenButton" Click="OpenButton_Click">                        
+                            <Image Source="/Resources/folder.gif" Width="48" Height="48" Stretch="UniformToFill"/>                        
+                    </Button>
+
+                    <Button ToolTip="Help ..." Name="HelpButton" Click="HelpButton_Click">
+                        <Button.Content>
+                            <Image Source="/Resources/help.gif" Width="48" Height="48" />
+                        </Button.Content>
+                    </Button>
+
+                    <Button ToolTip="About ..." Name="AboutButton" Click="AboutButton_Click">
+                        <Button.Content>
+                            <Image Source="/Resources/about.gif" Width="48" Height="48" />
+                        </Button.Content>
+                    </Button>
+
+                </ToolBar>
+            </ToolBarTray>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
     </Grid>
 </Window>
