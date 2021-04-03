@@ -11,13 +11,12 @@ namespace PomocnikEpuap.Core
     {
         private readonly string packageFilePath;
 
-        public ZipedEpuapPackage(string packageFilePath)//unzpip provider
+        public ZipedEpuapPackage(string packageFilePath)
         {
             this.packageFilePath = packageFilePath;
             XmlFileNames = new List<string>();
-            //XmlFiles = new List<XmlDocument>();
         }
-        public EpuapPackage UnZip() {
+        public EpuapDocument UnZip() {
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -41,12 +40,11 @@ namespace PomocnikEpuap.Core
 
             FilesCount = zipArchive.Entries.Count;
 
-            return new EpuapPackage(descriptor, document);
+            return new EpuapDocument(descriptor, document);
         }
 
         public int FilesCount { get; private set; }
 
         public List<string> XmlFileNames { get; private set; }
-
     }
 }

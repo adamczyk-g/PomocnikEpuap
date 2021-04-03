@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WPFgui.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Grid>
         <DockPanel>
             <ToolBarTray DockPanel.Dock="Top">
                 <ToolBar>
-                    <Button ToolTip="Open ..." Name="OpenButton" Click="OpenButton_Click">                        
-                            <Image Source="/Resources/folder.gif" Width="48" Height="48" Stretch="UniformToFill"/>                        
+                    <Button ToolTip="Open ..." Name="OpenButton" Click="OpenButton_Click">
+                        <Image Source="/Resources/folder.gif" Width="48" Height="48" Stretch="UniformToFill"/>
                     </Button>
 
                     <Button ToolTip="Help ..." Name="HelpButton" Click="HelpButton_Click">
@@ -29,8 +29,45 @@
 
                 </ToolBar>
             </ToolBarTray>
-            <TextBox AcceptsReturn="True" />
+            <Border CornerRadius="2" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                <DockPanel>
+                    <TextBlock Text="Lista paczek ePuap" DockPanel.Dock="Top" Margin="5" FontSize="15"/>
+
+                    <ListBox Name="DocumentsList" DockPanel.Dock="Top" Margin="5" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Stretch"
+                    BorderThickness="0" Height="338" VerticalAlignment="Top">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,1,0,0" BorderBrush="Gray" Margin="5,0,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="col1" Width="40" />
+                                            <ColumnDefinition SharedSizeGroup="col2" Width="*" />
+                                            <ColumnDefinition SharedSizeGroup="col3" Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Source="{Binding Image}" Width="24" Height="24" Margin="5" />
+                                        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5">
+                                            <TextBlock Text="{Binding SenderName}" TextWrapping="Wrap" FontWeight="Bold" />
+                                            <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                                            <TextBlock Text="{Binding SendDate}" TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+
+            </Border>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Grid>
+
+                </Grid>
+            </DockPanel>
+
         </DockPanel>
 
     </Grid>
+
+
 </Window>
