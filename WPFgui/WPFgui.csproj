@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PomocnikEpuap.Core\PomocnikEpuap.Core.csproj" />
+    <ProjectReference Include="..\PomocnikEpuap.VewModel\PomocnikEpuap.ViewModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
